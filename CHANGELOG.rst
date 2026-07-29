@@ -1,12 +1,9 @@
-2026.07.29
-==========
-No significant changes.
 =========
 Changelog
 =========
 
-Next
-====
+2026.07.29
+==========
 
 Features
 --------
