@@ -1,0 +1,281 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools",
+    "setuptools-scm>=8.1.0",
+]
+
+[project]
+name = "doc8-custom-ignores"
+description = "Configure additional Sphinx-specific doc8 ignores."
+readme = { file = "README.rst", content-type = "text/x-rst" }
+keywords = [
+    "doc8",
+    "docutils",
+    "lint",
+    "restructuredtext",
+    "sphinx",
+]
+license = { file = "LICENSE" }
+authors = [
+    { name = "Adam Dangoor", email = "adamdangoor@gmail.com" },
+]
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dynamic = [
+    "version",
+]
+dependencies = [
+    "doc8>=2.0.0",
+]
+optional-dependencies.dev = [
+    "actionlint-py==1.7.12.24",
+    "check-manifest==0.51",
+    "deptry==0.25.1",
+    "doccmd==2026.5.25",
+    "interrogate==1.7.0",
+    "mypy[faster-cache]==2.3.0",
+    "mypy-strict-kwargs==2026.7.19.1",
+    "prek==0.4.11",
+    "pydocstringformatter==1.0.0",
+    "pylint[spelling]==4.0.6",
+    "pylint-per-file-ignores==3.2.1",
+    "pyproject-fmt==2.25.3",
+    "pyrefly==1.1.1",
+    "pyright==1.1.411",
+    "pyroma==5.0.1",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "pyyaml==6.0.3",
+    "ruff==0.16.0",
+    "shellcheck-py==0.11.0.1",
+    "shfmt-py==4.0.0",
+    "sphinx-lint==1.0.2",
+    "strict-kwargs==2026.7.24",
+    "towncrier==25.8.0",
+    "ty==0.0.63",
+    "vulture==2.16",
+    "yamlfix==1.19.1",
+    "zizmor==1.28.0",
+]
+optional-dependencies.release = [
+    "check-wheel-contents==0.6.3",
+    "towncrier==25.8.0",
+]
+urls.Documentation = "https://github.com/adamtheturtle/doc8-custom-ignores#readme"
+urls.Source = "https://github.com/adamtheturtle/doc8-custom-ignores"
+entry-points."doc8.extension.check".custom_sphinx_ignores = "doc8_custom_ignores.plugin:CustomSphinxIgnores"
+
+[tool.setuptools]
+packages.find.where = [
+    "src",
+]
+package-data.doc8_custom_ignores = [
+    "py.typed",
+]
+zip-safe = false
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+
+[tool.ruff]
+line-length = 79
+lint.select = [
+    "ALL",
+]
+lint.ignore = [
+    "COM812",
+    "CPY001",
+    "D205",
+    "D212",
+    "ISC001",
+    "PLR0913",
+]
+lint.per-file-ignores."tests/*" = [
+    "S101",
+]
+lint.unfixable = [
+    "ERA001",
+]
+lint.flake8-tidy-imports.banned-api."typing.cast".msg = "typing.cast is banned: use explicit type narrowing or a typed variable instead."
+lint.pydocstyle.convention = "google"
+
+[tool.pylint]
+"MESSAGES CONTROL".disable = [
+    "duplicate-code",
+    "line-too-long",
+    "locally-disabled",
+    "missing-return-type-doc",
+    "missing-type-doc",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-instance-attributes",
+    "too-many-lines",
+    "too-many-locals",
+    "too-many-return-statements",
+    "ungrouped-imports",
+    "unused-import",
+    "useless-type-doc",
+    "wrong-import-order",
+]
+"MESSAGES CONTROL".enable = [
+    "bad-inline-option",
+    "deprecated-pragma",
+    "file-ignored",
+    "spelling",
+    "use-symbolic-message-instead",
+    "useless-suppression",
+]
+DEPRECATED_BUILTINS.bad-functions = [
+    "filter",
+    "getattr",
+    "hasattr",
+    "map",
+    "setattr",
+]
+FORMAT.single-line-if-stmt = false
+MAIN.fail-on = [
+    "useless-suppression",
+]
+MASTER.jobs = 0
+MASTER.load-plugins = [
+    "pylint.extensions.bad_builtin",
+    "pylint.extensions.comparison_placement",
+    "pylint.extensions.consider_refactoring_into_while_condition",
+    "pylint.extensions.docparams",
+    "pylint.extensions.dunder",
+    "pylint.extensions.eq_without_hash",
+    "pylint.extensions.for_any_all",
+    "pylint.extensions.mccabe",
+    "pylint.extensions.no_self_use",
+    "pylint.extensions.overlapping_exceptions",
+    "pylint.extensions.private_import",
+    "pylint.extensions.redefined_loop_name",
+    "pylint.extensions.redefined_variable_type",
+    "pylint.extensions.set_membership",
+    "pylint.extensions.typing",
+    "pylint_per_file_ignores",
+]
+MASTER.persistent = true
+MASTER.unsafe-load-any-extension = false
+SPELLING.spelling-dict = "en_US"
+SPELLING.spelling-private-dict-file = "spelling_private_dict.txt"
+SPELLING.spelling-store-unknown-words = "no"
+
+[tool.interrogate]
+fail-under = 100
+verbose = 2
+omit-covered-files = true
+
+[tool.check-manifest]
+ignore = [
+    ".pre-commit-config.yaml",
+    "CHANGELOG.rst",
+    "LICENSE",
+    "newsfragments",
+    "newsfragments/**",
+    "spelling_private_dict.txt",
+    "tests",
+    "tests/**",
+    "towncrier_template.rst.jinja",
+    "typings",
+    "typings/**",
+    "uv.lock",
+    "zizmor.yml",
+]
+
+[tool.deptry]
+optional_dependencies_dev_groups = [
+    "dev",
+    "release",
+]
+
+[tool.vulture]
+exclude = [
+    ".venv",
+]
+ignore_names = [
+    "CustomSphinxIgnores",
+    "report_iter",
+    "REPORTS",
+    "restore_doc8_ignores",
+]
+
+[tool.pyproject-fmt]
+indent = 4
+keep_full_version = true
+max_supported_python = "3.14"
+
+[tool.mypy]
+files = [
+    ".",
+]
+exclude = [
+    "build",
+]
+follow_untyped_imports = true
+strict = true
+plugins = [
+    "mypy_strict_kwargs",
+]
+
+[tool.pyrefly]
+errors.non-exhaustive-match = "error"
+search-path = [
+    "typings",
+]
+
+[tool.pyright]
+stubPath = "typings"
+typeCheckingMode = "strict"
+enableTypeIgnoreComments = false
+reportUnknownVariableType = false
+reportUnnecessaryTypeIgnoreComment = true
+
+[tool.ty]
+terminal.error-on-warning = true
+analysis.respect-type-ignore-comments = false
+
+[tool.pytest]
+ini_options.addopts = [
+    "--cov=doc8_custom_ignores",
+    "--cov-report=term-missing",
+    "--cov-fail-under=100",
+]
+
+[tool.coverage]
+run.branch = true
+report.exclude_also = [
+    "if TYPE_CHECKING:",
+]
+
+[tool.towncrier]
+package = "doc8_custom_ignores"
+directory = "newsfragments"
+filename = "CHANGELOG.rst"
+template = "towncrier_template.rst.jinja"
+title_format = "{version}"
+underlines = [
+    "=",
+    "-",
+    "~",
+]
+type = [
+    { directory = "feature", name = "Features", showcontent = true },
+    { directory = "bugfix", name = "Bug fixes", showcontent = true },
+    { directory = "doc", name = "Documentation", showcontent = true },
+    { directory = "misc", name = "Miscellaneous", showcontent = true },
+]

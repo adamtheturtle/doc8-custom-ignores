@@ -1,0 +1,5 @@
+CalVer
+Dangoor
+Stevedore
+docutils
+pyproject

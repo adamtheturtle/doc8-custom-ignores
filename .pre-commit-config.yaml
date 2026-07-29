@@ -1,0 +1,193 @@
+---
+fail_fast: true
+.uv_version: &uv_version uv==0.11.7
+ci:
+  skip:
+    - actionlint
+    - check-manifest
+    - deptry
+    - doc8
+    - interrogate
+    - mypy
+    - pydocstringformatter
+    - pylint
+    - pyproject-fmt-fix
+    - pyrefly
+    - pyright
+    - pyroma
+    - ruff-check-fix
+    - ruff-format-fix
+    - sphinx-lint
+    - strict-kwargs-fix
+    - ty
+    - vulture
+    - yamlfix
+    - zizmor
+default_install_hook_types: [pre-commit, pre-push]
+repos:
+  - repo: meta
+    hooks:
+      - id: check-useless-excludes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: file-contents-sorter
+        files: spelling_private_dict\.txt$
+      - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: rst-backticks
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+      - id: text-unicode-replacement-char
+  - repo: local
+    hooks:
+      - id: actionlint
+        name: actionlint
+        entry: uv run --extra=dev actionlint
+        language: python
+        pass_filenames: false
+        types_or: [yaml]
+        additional_dependencies: [*uv_version]
+      - id: pydocstringformatter
+        name: pydocstringformatter
+        entry: uv run --extra=dev pydocstringformatter
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+      - id: mypy
+        name: mypy
+        stages: [pre-push]
+        entry: uv run --extra=dev -m mypy --num-workers=4
+        language: python
+        types_or: [python, toml]
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: check-manifest
+        name: check-manifest
+        stages: [pre-push]
+        entry: uv run --extra=dev -m check_manifest
+        language: python
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: pyright
+        name: pyright
+        stages: [pre-push]
+        entry: uv run --extra=dev -m pyright .
+        language: python
+        types_or: [python, toml]
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: ty
+        name: ty
+        stages: [pre-push]
+        entry: uv run --extra=dev ty check
+        language: python
+        types_or: [python, toml]
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: pyrefly
+        name: pyrefly
+        stages: [pre-push]
+        entry: uv run --extra=dev pyrefly check
+        language: python
+        types_or: [python, toml]
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: vulture
+        name: vulture
+        entry: uv run --extra=dev -m vulture .
+        language: python
+        types_or: [python]
+        pass_filenames: false
+        additional_dependencies: [*uv_version]
+      - id: pyroma
+        name: pyroma
+        entry: uv run --extra=dev -m pyroma --min 10 .
+        language: python
+        pass_filenames: false
+        types_or: [toml]
+        additional_dependencies: [*uv_version]
+      - id: interrogate
+        name: interrogate
+        entry: uv run --extra=dev -m interrogate
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+      - id: deptry
+        name: deptry
+        stages: [pre-push]
+        entry: uv run --extra=dev deptry .
+        language: python
+        pass_filenames: false
+        types_or: [python, toml]
+        additional_dependencies: [*uv_version]
+      - id: pylint
+        name: pylint
+        stages: [pre-push]
+        entry: uv run --extra=dev pylint
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+      - id: ruff-check-fix
+        name: ruff check
+        entry: uv run --extra=dev ruff check --fix
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+      - id: ruff-format-fix
+        name: ruff format
+        entry: uv run --extra=dev ruff format
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+      - id: strict-kwargs-fix
+        name: strict-kwargs
+        entry: uv run --extra=dev strict-kwargs check --fix
+        language: python
+        types_or: [python]
+        additional_dependencies: [*uv_version]
+        require_serial: true
+      - id: pyproject-fmt-fix
+        name: pyproject-fmt
+        entry: uv run --extra=dev pyproject-fmt
+        language: python
+        files: pyproject.toml
+        additional_dependencies: [*uv_version]
+      - id: doc8
+        name: doc8
+        entry: uv run --extra=dev doc8
+        language: python
+        types_or: [rst]
+        additional_dependencies: [*uv_version]
+      - id: sphinx-lint
+        name: sphinx-lint
+        entry: uv run --extra=dev sphinx-lint
+        language: python
+        types_or: [rst]
+        additional_dependencies: [*uv_version]
+      - id: yamlfix
+        name: yamlfix
+        entry: uv run --extra=dev yamlfix
+        language: python
+        types_or: [yaml]
+        additional_dependencies: [*uv_version]
+      - id: zizmor
+        name: zizmor
+        entry: uv run --extra=dev zizmor .
+        language: python
+        pass_filenames: false
+        types_or: [yaml]
+        additional_dependencies: [*uv_version]
