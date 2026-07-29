@@ -1,4 +1,5 @@
 CalVer
+Changelog
 Dangoor
 Stevedore
 docutils
