@@ -1,4 +1,4 @@
-"""Configurable custom Sphinx ignores for doc8."""
+"""Configurable custom ignores for doc8."""
 
 from __future__ import annotations
 

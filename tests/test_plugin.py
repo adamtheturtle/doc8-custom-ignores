@@ -76,10 +76,10 @@ def test_diagnostic_is_reported_without_configuration(
 @pytest.mark.parametrize(
     argnames="configuration",
     argvalues=[
-        f"[tool.doc8]\nsphinx-ignore-messages = ['''{DIAGNOSTIC}''']\n",
+        f"[tool.doc8]\nignore-messages = ['''{DIAGNOSTIC}''']\n",
         (
             "[tool.doc8]\n"
-            "sphinx-ignore-regex = ["
+            "ignore-regex = ["
             "'''^Error in \"include\" directive:\\nunknown option: "
             "\"path-substitutions\"\\.$''']\n"
         ),
@@ -104,7 +104,7 @@ def test_custom_ignores_respect_no_sphinx(
     """Do not suppress configured messages when Sphinx mode is disabled."""
     configuration = (
         f"[tool.doc8]\nsphinx = false\n"
-        f"sphinx-ignore-messages = ['''{DIAGNOSTIC}''']\n"
+        f"ignore-messages = ['''{DIAGNOSTIC}''']\n"
     )
     document = write_project(tmp_path=tmp_path, configuration=configuration)
     monkeypatch.chdir(path=tmp_path)
@@ -116,11 +116,11 @@ def test_custom_ignores_respect_no_sphinx(
     argnames=("configuration", "match"),
     argvalues=[
         (
-            '[tool.doc8]\nsphinx-ignore-messages = "not-an-array"\n',
+            '[tool.doc8]\nignore-messages = "not-an-array"\n',
             "must be an array",
         ),
         (
-            "[tool.doc8]\nsphinx-ignore-regex = [1]\n",
+            "[tool.doc8]\nignore-regex = [1]\n",
             "must contain only strings",
         ),
     ],
@@ -146,7 +146,7 @@ def test_invalid_regular_expression_is_rejected(
     """Expose Python's useful error for an invalid regular expression."""
     document = write_project(
         tmp_path=tmp_path,
-        configuration="[tool.doc8]\nsphinx-ignore-regex = ['[']\n",
+        configuration="[tool.doc8]\nignore-regex = ['[']\n",
     )
     monkeypatch.chdir(path=tmp_path)
 

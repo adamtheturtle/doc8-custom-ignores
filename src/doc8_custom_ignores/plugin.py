@@ -1,4 +1,4 @@
-"""Doc8 extension for configurable Sphinx validity ignores."""
+"""Doc8 extension for configurable validity ignores."""
 
 from __future__ import annotations
 
@@ -11,8 +11,8 @@ from doc8.checks import CheckValidity, ContentCheck
 if TYPE_CHECKING:
     from doc8.parser import ParsedFile
 
-_MESSAGES_KEY: Final = "sphinx_ignore_messages"
-_REGEX_KEY: Final = "sphinx_ignore_regex"
+_MESSAGES_KEY: Final = "ignore_messages"
+_REGEX_KEY: Final = "ignore_regex"
 
 
 def _string_list(config: Mapping[str, object], key: str) -> Sequence[str]:
@@ -32,7 +32,7 @@ def _string_list(config: Mapping[str, object], key: str) -> Sequence[str]:
     return strings
 
 
-class CustomSphinxIgnores(ContentCheck):
+class CustomIgnores(ContentCheck):
     """Install configured ignore patterns into doc8's validity check."""
 
     REPORTS: Final = frozenset({"D000"})

@@ -7,14 +7,13 @@ requires = [
 
 [project]
 name = "doc8-custom-ignores"
-description = "Configure additional Sphinx-specific doc8 ignores."
+description = "Configure additional doc8 D000 ignores."
 readme = { file = "README.rst", content-type = "text/x-rst" }
 keywords = [
     "doc8",
     "docutils",
     "lint",
     "restructuredtext",
-    "sphinx",
 ]
 license = { file = "LICENSE" }
 authors = [
@@ -75,9 +74,9 @@ optional-dependencies.release = [
     "check-wheel-contents==0.6.3",
     "towncrier==25.8.0",
 ]
-urls.Documentation = "https://github.com/adamtheturtle/doc8-custom-ignores#readme"
+urls.Documentation = "https://adamtheturtle.github.io/doc8-custom-ignores/"
 urls.Source = "https://github.com/adamtheturtle/doc8-custom-ignores"
-entry-points."doc8.extension.check".custom_sphinx_ignores = "doc8_custom_ignores.plugin:CustomSphinxIgnores"
+entry-points."doc8.extension.check".custom_ignores = "doc8_custom_ignores.plugin:CustomIgnores"
 
 [tool.setuptools]
 packages.find.where = [
@@ -208,7 +207,7 @@ exclude = [
     ".venv",
 ]
 ignore_names = [
-    "CustomSphinxIgnores",
+    "CustomIgnores",
     "report_iter",
     "REPORTS",
     "restore_doc8_ignores",
