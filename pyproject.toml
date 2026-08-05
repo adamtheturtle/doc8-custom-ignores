@@ -116,6 +116,7 @@ lint.per-file-ignores."tests/*" = [
 lint.unfixable = [
     "ERA001",
 ]
+lint.external = [ "NOD" ]
 lint.flake8-tidy-imports.banned-api."typing.cast".msg = "typing.cast is banned: use explicit type narrowing or a typed variable instead."
 lint.pydocstyle.convention = "google"
 
@@ -310,3 +311,7 @@ type = [
     { directory = "doc", name = "Documentation", showcontent = true },
     { directory = "misc", name = "Miscellaneous", showcontent = true },
 ]
+
+[tool.no_defaults]
+private_only = true
+per_file_enforcement."tests/**" = "all"
