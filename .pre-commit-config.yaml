@@ -1,28 +1,6 @@
 ---
 fail_fast: true
 .uv_version: &uv_version uv==0.11.7
-ci:
-  skip:
-    - actionlint
-    - check-manifest
-    - deptry
-    - doc8
-    - interrogate
-    - mypy
-    - pydocstringformatter
-    - pylint
-    - pyproject-fmt-fix
-    - pyrefly
-    - pyright
-    - pyroma
-    - ruff-check-fix
-    - ruff-format-fix
-    - sphinx-lint
-    - strict-kwargs-fix
-    - ty
-    - vulture
-    - yamlfix
-    - zizmor
 default_install_hook_types: [pre-commit, pre-push]
 repos:
   - repo: meta

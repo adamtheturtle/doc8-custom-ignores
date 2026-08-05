@@ -16,3 +16,7 @@ updates:
       development-dependencies:
         dependency-type: development
         patterns: ['*']
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: daily
