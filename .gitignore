@@ -8,3 +8,6 @@ build/
 dist/
 htmlcov/
 src/*.egg-info/
+
+# Vale styles downloaded by ``vale sync``
+styles/
