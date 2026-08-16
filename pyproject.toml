@@ -45,7 +45,7 @@ optional-dependencies.dev = [
     "actionlint-py==1.7.12.24",
     "check-manifest==0.51",
     "deptry==0.25.1",
-    "doccmd==2026.7.19; python_version>='3.11'",
+    "doccmd==2026.8.16; python_version>='3.11'",
     "furo==2025.12.19",
     "interrogate==1.7.0",
     "mypy[faster-cache]==2.3.0",
