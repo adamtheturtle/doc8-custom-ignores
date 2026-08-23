@@ -191,12 +191,12 @@ omit-covered-files = true
 
 [tool.check-manifest]
 ignore = [
-    "prek.toml",
     ".vale.ini",
     "CHANGELOG.rst",
     "LICENSE",
     "newsfragments",
     "newsfragments/**",
+    "prek.toml",
     "spelling_private_dict.txt",
     "tests",
     "tests/**",
