@@ -309,6 +309,11 @@ underlines = [
     "-",
     "~",
 ]
+# Setting ``ignore`` makes ``towncrier build`` fail on any file in
+# the fragment directory whose suffix is not a declared fragment
+# type, instead of silently dropping it.  Only the listed
+# non-fragment files are allowed through.
+ignore = [ ".gitkeep" ]
 type = [
     { directory = "feature", name = "Features", showcontent = true },
     { directory = "bugfix", name = "Bug fixes", showcontent = true },
