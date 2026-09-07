@@ -7,6 +7,7 @@ from collections.abc import Iterator, Mapping, Sequence
 from typing import TYPE_CHECKING, Final
 
 from doc8.checks import CheckValidity, ContentCheck
+from typing_extensions import override
 
 if TYPE_CHECKING:
     from doc8.parser import ParsedFile
@@ -61,7 +62,7 @@ class CustomIgnores(ContentCheck):
             # extensions. Retain the exception and raise it from report_iter
             # so invalid user configuration makes doc8 fail clearly.
             self._configuration_error = error
-            configured = []
+            configured = list[re.Pattern[str]]()
         existing = {
             (pattern.pattern, pattern.flags)
             for pattern in CheckValidity.SPHINX_IGNORES_REGEX
@@ -72,6 +73,7 @@ class CustomIgnores(ContentCheck):
             if (pattern.pattern, pattern.flags) not in existing
         )
 
+    @override
     def report_iter(
         self,
         parsed_file: ParsedFile,

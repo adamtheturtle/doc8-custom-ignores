@@ -40,6 +40,7 @@ dynamic = [
 ]
 dependencies = [
     "doc8>=2.0.0",
+    "typing-extensions>=4.4.0",
 ]
 optional-dependencies.dev = [
     "actionlint-py==1.7.12.24",
@@ -275,6 +276,7 @@ search-path = [
     "typings",
 ]
 errors.non-exhaustive-match = "error"
+preset = "strict"
 
 [tool.pyright]
 stubPath = "typings"
