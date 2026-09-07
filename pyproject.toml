@@ -275,6 +275,7 @@ search-path = [
     "typings",
 ]
 errors.non-exhaustive-match = "error"
+errors.unused-ignore = "error"
 
 [tool.pyright]
 stubPath = "typings"
