@@ -52,7 +52,7 @@ hooks = [
   {
     id = "actionlint",
     name = "actionlint",
-    entry = "uv run --extra=dev actionlint",
+    entry = "uv run --group=dev actionlint",
     language = "python",
     pass_filenames = false,
     types_or = ["yaml"],
@@ -61,7 +61,7 @@ hooks = [
   {
     id = "pydocstringformatter",
     name = "pydocstringformatter",
-    entry = "uv run --extra=dev pydocstringformatter",
+    entry = "uv run --group=dev pydocstringformatter",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"]
@@ -70,7 +70,7 @@ hooks = [
     id = "mypy",
     name = "mypy",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev -m mypy --num-workers=4",
+    entry = "uv run --group=dev -m mypy --num-workers=4",
     language = "python",
     types_or = [
       "python",
@@ -83,7 +83,7 @@ hooks = [
     id = "check-manifest",
     name = "check-manifest",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev -m check_manifest",
+    entry = "uv run --group=dev -m check_manifest",
     language = "python",
     pass_filenames = false,
     additional_dependencies = ["uv==0.11.7"]
@@ -92,7 +92,7 @@ hooks = [
     id = "pyright",
     name = "pyright",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev -m pyright .",
+    entry = "uv run --group=dev -m pyright .",
     language = "python",
     types_or = [
       "python",
@@ -105,7 +105,7 @@ hooks = [
     id = "ty",
     name = "ty",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev ty check",
+    entry = "uv run --group=dev ty check",
     language = "python",
     types_or = [
       "python",
@@ -118,7 +118,7 @@ hooks = [
     id = "pyrefly",
     name = "pyrefly",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev pyrefly check",
+    entry = "uv run --group=dev pyrefly check",
     language = "python",
     types_or = [
       "python",
@@ -130,7 +130,7 @@ hooks = [
   {
     id = "vulture",
     name = "vulture",
-    entry = "uv run --extra=dev -m vulture .",
+    entry = "uv run --group=dev -m vulture .",
     language = "python",
     types_or = ["python"],
     pass_filenames = false,
@@ -139,7 +139,7 @@ hooks = [
   {
     id = "pyroma",
     name = "pyroma",
-    entry = "uv run --extra=dev -m pyroma --min 10 .",
+    entry = "uv run --group=dev -m pyroma --min 10 .",
     language = "python",
     pass_filenames = false,
     types_or = ["toml"],
@@ -148,7 +148,7 @@ hooks = [
   {
     id = "interrogate",
     name = "interrogate",
-    entry = "uv run --extra=dev -m interrogate",
+    entry = "uv run --group=dev -m interrogate",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"]
@@ -157,7 +157,7 @@ hooks = [
     id = "deptry",
     name = "deptry",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev deptry .",
+    entry = "uv run --group=dev deptry .",
     language = "python",
     pass_filenames = false,
     types_or = [
@@ -170,7 +170,7 @@ hooks = [
     id = "pylint",
     name = "pylint",
     stages = ["pre-push"],
-    entry = "uv run --extra=dev pylint",
+    entry = "uv run --group=dev pylint",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"]
@@ -178,7 +178,7 @@ hooks = [
   {
     id = "ruff-check-fix",
     name = "ruff check",
-    entry = "uv run --extra=dev ruff check --fix",
+    entry = "uv run --group=dev ruff check --fix",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"]
@@ -186,7 +186,7 @@ hooks = [
   {
     id = "ruff-format-fix",
     name = "ruff format",
-    entry = "uv run --extra=dev ruff format",
+    entry = "uv run --group=dev ruff format",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"]
@@ -194,7 +194,7 @@ hooks = [
   {
     id = "strict-kwargs-fix",
     name = "strict-kwargs",
-    entry = "uv run --extra=dev strict-kwargs check --fix",
+    entry = "uv run --group=dev strict-kwargs check --fix",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"],
@@ -203,7 +203,7 @@ hooks = [
   {
     id = "no-defaults",
     name = "no-defaults",
-    entry = "uv run --extra=dev no-defaults",
+    entry = "uv run --group=dev no-defaults",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"],
@@ -212,7 +212,7 @@ hooks = [
   {
     id = "pyproject-fmt-fix",
     name = "pyproject-fmt",
-    entry = "uv run --extra=dev pyproject-fmt",
+    entry = "uv run --group=dev pyproject-fmt",
     language = "python",
     files = "pyproject.toml",
     additional_dependencies = ["uv==0.11.7"]
@@ -220,7 +220,7 @@ hooks = [
   {
     id = "vale-sync",
     name = "vale sync",
-    entry = "uv run --extra=dev vale sync",
+    entry = "uv run --group=dev vale sync",
     language = "python",
     pass_filenames = false,
     files = '(\.(rst|md)$|^\.vale\.ini$)',
@@ -229,7 +229,7 @@ hooks = [
   {
     id = "vale",
     name = "vale",
-    entry = "uv run --extra=dev vale",
+    entry = "uv run --group=dev vale",
     language = "python",
     types_or = [
       "rst",
@@ -241,7 +241,7 @@ hooks = [
   {
     id = "doc8",
     name = "doc8",
-    entry = "uv run --extra=dev doc8",
+    entry = "uv run --group=dev doc8",
     language = "python",
     types_or = ["rst"],
     additional_dependencies = ["uv==0.11.7"]
@@ -249,7 +249,7 @@ hooks = [
   {
     id = "sphinx-lint",
     name = "sphinx-lint",
-    entry = "uv run --extra=dev sphinx-lint",
+    entry = "uv run --group=dev sphinx-lint",
     language = "python",
     types_or = ["rst"],
     additional_dependencies = ["uv==0.11.7"]
@@ -257,7 +257,7 @@ hooks = [
   {
     id = "yamlfix",
     name = "yamlfix",
-    entry = "uv run --extra=dev yamlfix",
+    entry = "uv run --group=dev yamlfix",
     language = "python",
     types_or = ["yaml"],
     additional_dependencies = ["uv==0.11.7"]
@@ -265,7 +265,7 @@ hooks = [
   {
     id = "zizmor",
     name = "zizmor",
-    entry = "uv run --extra=dev zizmor .",
+    entry = "uv run --group=dev zizmor .",
     language = "python",
     pass_filenames = false,
     types_or = ["yaml"],

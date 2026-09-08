@@ -25,7 +25,7 @@ jobs:
           enable-cache: true
           cache-dependency-glob: '**/pyproject.toml'
       - name: Run tests
-        run: uv run --extra=dev --python=${{ matrix.python-version }} pytest -vvv
+        run: uv run --group=dev --python=${{ matrix.python-version }} pytest -vvv
   completion-ci:
     needs: build
     runs-on: ubuntu-latest
