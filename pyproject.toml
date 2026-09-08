@@ -42,7 +42,12 @@ dependencies = [
     "doc8>=2.0.0",
     "typing-extensions>=4.4.0",
 ]
-optional-dependencies.dev = [
+urls.Documentation = "https://adamtheturtle.github.io/doc8-custom-ignores/"
+urls.Source = "https://github.com/adamtheturtle/doc8-custom-ignores"
+entry-points."doc8.extension.check".custom_ignores = "doc8_custom_ignores.plugin:CustomIgnores"
+
+[dependency-groups]
+dev = [
     "actionlint-py==1.7.12.24",
     "check-manifest==0.51",
     "deptry==0.25.1",
@@ -80,13 +85,10 @@ optional-dependencies.dev = [
     "yamlfix==1.19.1",
     "zizmor==1.30.0",
 ]
-optional-dependencies.release = [
+release = [
     "check-wheel-contents==0.6.3",
     "towncrier==25.8.0",
 ]
-urls.Documentation = "https://adamtheturtle.github.io/doc8-custom-ignores/"
-urls.Source = "https://github.com/adamtheturtle/doc8-custom-ignores"
-entry-points."doc8.extension.check".custom_ignores = "doc8_custom_ignores.plugin:CustomIgnores"
 
 [tool.setuptools]
 packages.find.where = [
@@ -213,10 +215,6 @@ ignore = [
 [tool.deptry]
 per_rule_ignores.DEP004 = [
     "sphinx_pyproject",
-]
-optional_dependencies_dev_groups = [
-    "dev",
-    "release",
 ]
 
 [tool.vulture]
