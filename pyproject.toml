@@ -209,6 +209,7 @@ ignore = [
     "newsfragments/**",
     "prek.toml",
     "spelling_private_dict.txt",
+    "styles/snapper/**",
     "tests",
     "tests/**",
     "towncrier_template.rst.jinja",
