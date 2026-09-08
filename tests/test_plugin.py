@@ -41,13 +41,13 @@ def restore_doc8_ignores() -> Generator[None]:
 
 def write_project(tmp_path: Path, configuration: str) -> Path:
     """Write a minimal project which produces the target diagnostic."""
-    (tmp_path / "pyproject.toml").write_text(
+    _ = (tmp_path / "pyproject.toml").write_text(
         data=configuration,
         encoding="utf-8",
     )
     document = tmp_path / "index.rst"
-    document.write_text(data=DOCUMENT, encoding="utf-8")
-    (tmp_path / "included.rst").write_text(
+    _ = document.write_text(data=DOCUMENT, encoding="utf-8")
+    _ = (tmp_path / "included.rst").write_text(
         data="Included.\n",
         encoding="utf-8",
     )
@@ -136,7 +136,7 @@ def test_invalid_configuration_is_rejected(
     monkeypatch.chdir(path=tmp_path)
 
     with pytest.raises(expected_exception=TypeError, match=match):
-        validity_messages(document=document)
+        _ = validity_messages(document=document)
 
 
 def test_invalid_regular_expression_is_rejected(
@@ -151,4 +151,4 @@ def test_invalid_regular_expression_is_rejected(
     monkeypatch.chdir(path=tmp_path)
 
     with pytest.raises(expected_exception=re.error):
-        validity_messages(document=document)
+        _ = validity_messages(document=document)

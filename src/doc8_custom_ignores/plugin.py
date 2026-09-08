@@ -38,11 +38,9 @@ class CustomIgnores(ContentCheck):
 
     REPORTS: Final = frozenset({"D000"})
 
-    # doc8's base setup has no type information and only stores configuration.
-    # This extension validates and stores the portion it needs itself.
-    # pylint: disable=super-init-not-called
     def __init__(self, config: Mapping[str, object]) -> None:
         """Compile and register configured patterns."""
+        super().__init__(cfg=config)
         self._configuration_error: Exception | None = None
         try:
             messages = _string_list(config=config, key=_MESSAGES_KEY)
