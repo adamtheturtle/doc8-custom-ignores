@@ -34,8 +34,8 @@ Regular expressions are available when an exact message is not suitable:
        '''^Error in "include" directive:\nunknown option: "path-substitutions"\.$''',
    ]
 
-Patterns use Python's regular-expression syntax. Both settings follow doc8's
-default behavior and are disabled by ``doc8 --no-sphinx``.
+Patterns use Python's regular-expression syntax.
+Both settings follow doc8's default behavior and are disabled by ``doc8 --no-sphinx``.
 
 Project
 -------
