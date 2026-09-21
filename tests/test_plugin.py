@@ -70,7 +70,7 @@ def test_diagnostic_is_reported_without_configuration(
     document = write_project(tmp_path=tmp_path, configuration="[tool.doc8]\n")
     monkeypatch.chdir(path=tmp_path)
 
-    assert DIAGNOSTIC in validity_messages(document=document)
+    assert validity_messages(document=document) == [DIAGNOSTIC]
 
 
 @pytest.mark.parametrize(
@@ -109,7 +109,7 @@ def test_custom_ignores_respect_no_sphinx(
     document = write_project(tmp_path=tmp_path, configuration=configuration)
     monkeypatch.chdir(path=tmp_path)
 
-    assert DIAGNOSTIC in validity_messages(document=document)
+    assert validity_messages(document=document) == [DIAGNOSTIC]
 
 
 @pytest.mark.parametrize(
