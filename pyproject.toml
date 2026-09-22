@@ -48,7 +48,7 @@ entry-points."doc8.extension.check".custom_ignores = "doc8_custom_ignores.plugin
 
 [dependency-groups]
 dev = [
-    "actionlint-py==1.7.12.24",
+    "actionlint-py==1.7.12.25",
     "check-manifest==0.51",
     "deptry==0.25.1",
     "doccmd==2026.9.16.1; python_version>='3.11'",
