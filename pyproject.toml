@@ -298,7 +298,7 @@ analysis.strict-equality-semantics = true
 analysis.strict-generic-narrowing = true
 
 [tool.pytest]
-ini_options.addopts = [
+addopts = [
     "--cov=doc8_custom_ignores",
     "--cov-report=term-missing",
     "--cov-fail-under=100",
