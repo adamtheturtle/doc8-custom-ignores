@@ -274,6 +274,7 @@ strict = true
 plugins = [
     "mypy_strict_kwargs",
 ]
+num_workers = "auto"
 
 [tool.pyrefly]
 search-path = [
