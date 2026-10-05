@@ -31,10 +31,9 @@ DOCUMENT = """\
 """
 
 
-# Karva alpha.12 binds its configured fixture decorator's generics before
-# seeing the function, so Mypy 2.4 infers Never for its arguments and return.
-# Remove this suppression when FixtureFunctionMarker.__call__ in Karva binds
-# those generics: https://github.com/MatthewMckee4/karva/blob/a0d05cdc09dda93b56bde33b93cf47a71c9d3f1f/python/karva/_karva/__init__.pyi
+# Mypy 2.4 infers Never for configured fixtures in Karva alpha.12.
+# https://github.com/MatthewMckee4/karva/issues/1508
+# Remove this suppression after upgrading to a release that fixes the issue.
 @karva.fixture(auto_use=True)  # type: ignore[arg-type]
 def restore_doc8_ignores() -> Generator[None]:
     """Prevent registered patterns leaking between tests."""
