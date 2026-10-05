@@ -302,16 +302,18 @@ analysis.strict-generic-narrowing = true
 
 [tool.pytest]
 addopts = [
-    "--cov=doc8_custom_ignores",
-    "--cov-report=term-missing",
-    "--cov-fail-under=100",
+    "--cov",
+    "--cov-config=pyproject.toml",
 ]
 
 [tool.coverage]
+run.source = [ "doc8_custom_ignores" ]
 run.branch = true
+report.fail_under = 100
 report.exclude_also = [
     "if TYPE_CHECKING:",
 ]
+report.show_missing = true
 
 [tool.towncrier]
 package = "doc8_custom_ignores"
