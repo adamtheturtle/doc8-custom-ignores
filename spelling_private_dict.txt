@@ -1,6 +1,8 @@
 CalVer
 Changelog
 Dangoor
+Karva
+Mypy
 Stevedore
 docutils
 pyproject

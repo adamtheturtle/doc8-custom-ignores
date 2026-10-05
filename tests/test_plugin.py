@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import TYPE_CHECKING, Protocol
 
-import pytest
+import karva
 from doc8.checks import CheckValidity
 from doc8.main import doc8
 
@@ -31,7 +31,11 @@ DOCUMENT = """\
 """
 
 
-@pytest.fixture(autouse=True)
+# Karva alpha.12 binds its configured fixture decorator's generics before
+# seeing the function, so Mypy 2.4 infers Never for its arguments and return.
+# Remove this suppression when FixtureFunctionMarker.__call__ in Karva binds
+# those generics: https://github.com/MatthewMckee4/karva/blob/a0d05cdc09dda93b56bde33b93cf47a71c9d3f1f/python/karva/_karva/__init__.pyi
+@karva.fixture(auto_use=True)  # type: ignore[arg-type]
 def restore_doc8_ignores() -> Generator[None]:
     """Prevent registered patterns leaking between tests."""
     original = list(CheckValidity.SPHINX_IGNORES_REGEX)
@@ -64,7 +68,7 @@ def validity_messages(document: Path) -> list[str]:
 
 def test_diagnostic_is_reported_without_configuration(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
+    monkeypatch: karva.MockEnv,
 ) -> None:
     """Do not alter doc8 when no custom ignores are configured."""
     document = write_project(tmp_path=tmp_path, configuration="[tool.doc8]\n")
@@ -73,9 +77,9 @@ def test_diagnostic_is_reported_without_configuration(
     assert validity_messages(document=document) == [DIAGNOSTIC]
 
 
-@pytest.mark.parametrize(
-    argnames="configuration",
-    argvalues=[
+@karva.tags.parametrize(
+    arg_names="configuration",
+    arg_values=[
         f"[tool.doc8]\nignore-messages = ['''{DIAGNOSTIC}''']\n",
         (
             "[tool.doc8]\n"
@@ -87,7 +91,7 @@ def test_diagnostic_is_reported_without_configuration(
 )
 def test_configured_diagnostic_is_ignored(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
+    monkeypatch: karva.MockEnv,
     configuration: str,
 ) -> None:
     """Ignore diagnostics configured as exact text or a regular expression."""
@@ -99,7 +103,7 @@ def test_configured_diagnostic_is_ignored(
 
 def test_custom_ignores_respect_no_sphinx(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
+    monkeypatch: karva.MockEnv,
 ) -> None:
     """Do not suppress configured messages when Sphinx mode is disabled."""
     configuration = (
@@ -112,9 +116,9 @@ def test_custom_ignores_respect_no_sphinx(
     assert validity_messages(document=document) == [DIAGNOSTIC]
 
 
-@pytest.mark.parametrize(
-    argnames=("configuration", "match"),
-    argvalues=[
+@karva.tags.parametrize(
+    arg_names=("configuration", "match"),
+    arg_values=[
         (
             '[tool.doc8]\nignore-messages = "not-an-array"\n',
             "must be an array",
@@ -127,7 +131,7 @@ def test_custom_ignores_respect_no_sphinx(
 )
 def test_invalid_configuration_is_rejected(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
+    monkeypatch: karva.MockEnv,
     configuration: str,
     match: str,
 ) -> None:
@@ -135,13 +139,13 @@ def test_invalid_configuration_is_rejected(
     document = write_project(tmp_path=tmp_path, configuration=configuration)
     monkeypatch.chdir(path=tmp_path)
 
-    with pytest.raises(expected_exception=TypeError, match=match):
+    with karva.raises(expected_exception=TypeError, match=match):
         _ = validity_messages(document=document)
 
 
 def test_invalid_regular_expression_is_rejected(
     tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
+    monkeypatch: karva.MockEnv,
 ) -> None:
     """Expose Python's useful error for an invalid regular expression."""
     document = write_project(
@@ -150,5 +154,5 @@ def test_invalid_regular_expression_is_rejected(
     )
     monkeypatch.chdir(path=tmp_path)
 
-    with pytest.raises(expected_exception=re.error):
+    with karva.raises(expected_exception=re.error):
         _ = validity_messages(document=document)
