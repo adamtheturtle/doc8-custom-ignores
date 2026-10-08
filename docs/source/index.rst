@@ -41,7 +41,7 @@ Project
 -------
 
 * `Source code <https://github.com/adamtheturtle/doc8-custom-ignores>`_
-* `Changelog <changelog.html>`_
+* :doc:`changelog`
 
 .. toctree::
    :hidden:

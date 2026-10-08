@@ -3,3 +3,4 @@ include README.rst
 include src/doc8_custom_ignores/py.typed
 recursive-include docs *.py
 recursive-include docs *.rst
+recursive-include docs *.md
