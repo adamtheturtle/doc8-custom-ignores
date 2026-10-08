@@ -58,6 +58,8 @@ dev = [
     "mypy==2.4.0",
     "mypy-pytest-parametrize==2026.10.5.1; python_version>='3.11'",
     "mypy-strict-kwargs==2026.8.25.1; python_version>='3.11'",
+    "myst-parser==4.0.1; python_version<'3.11'",
+    "myst-parser==5.1.0; python_version>='3.11'",
     "no-defaults==2026.9.1",
     "prek==0.5.4",
     "pydocstringformatter==1.0.0; python_version>='3.11'",
@@ -206,7 +208,7 @@ omit-covered-files = true
 [tool.check-manifest]
 ignore = [
     ".vale.ini",
-    "CHANGELOG.rst",
+    "CHANGELOG.md",
     "LICENSE",
     "newsfragments",
     "newsfragments/**",
@@ -215,7 +217,6 @@ ignore = [
     "styles/snapper/**",
     "tests",
     "tests/**",
-    "towncrier_template.rst.jinja",
     "typings",
     "typings/**",
     "uv.lock",
@@ -304,20 +305,13 @@ analysis.strict-equality-semantics = true
 analysis.strict-generic-narrowing = true
 
 [tool.towncrier]
-package = "doc8_custom_ignores"
+# Write the same native Markdown file used by documentation and GitHub releases.
 directory = "newsfragments"
-filename = "CHANGELOG.rst"
-template = "towncrier_template.rst.jinja"
-title_format = "{version}"
-underlines = [
-    "=",
-    "-",
-    "~",
-]
-# Setting ``ignore`` makes ``towncrier build`` fail on any file in
-# the fragment directory whose suffix is not a declared fragment
-# type, instead of silently dropping it.  Only the listed
-# non-fragment files are allowed through.
+filename = "docs/source/changelog/{version}.md"
+title_format = "# {version} ({project_date})"
+issue_format = "[#{issue}](https://github.com/adamtheturtle/doc8-custom-ignores/issues/{issue})"
+single_file = false
+# Reject invalid fragment names instead of silently losing release entries.
 ignore = [ ".gitkeep" ]
 type = [
     { directory = "feature", name = "Features", showcontent = true },

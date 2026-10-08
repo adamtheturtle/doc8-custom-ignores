@@ -18,13 +18,14 @@ author = _pyproject_config.author
 release = importlib.metadata.version(distribution_name=project)
 
 extensions = [
+    "myst_parser",
     "sphinx_copybutton",
     "sphinxcontrib.spelling",
     "sphinx_substitution_extensions",
 ]
 
 templates_path = ["_templates"]
-source_suffix = ".rst"
+source_suffix = {".rst": "restructuredtext", ".md": "markdown"}
 master_doc = "index"
 
 project_copyright = f"%Y, {author}"
