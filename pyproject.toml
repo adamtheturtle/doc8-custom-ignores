@@ -32,6 +32,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Topic :: Documentation",
     "Topic :: Software Development :: Quality Assurance",
 ]
@@ -54,7 +55,7 @@ dev = [
     "doccmd==2026.9.16.1; python_version>='3.11'",
     "furo==2025.12.19",
     "interrogate==1.7.0",
-    "karva==0.0.1a12",
+    "karva==0.0.1a13",
     "mypy==2.4.0",
     "mypy-pytest-parametrize==2026.10.5.1; python_version>='3.11'",
     "mypy-strict-kwargs==2026.8.25.1; python_version>='3.11'",
@@ -80,7 +81,7 @@ dev = [
     "sphinx-pyproject==0.3.0",
     "sphinx-substitution-extensions==2026.6.17; python_version>='3.11'",
     "sphinxcontrib-spelling==8.0.2",
-    "strict-kwargs==2026.7.24; python_version>='3.11'",
+    "strict-kwargs==2026.10.9; python_version>='3.11'",
     "towncrier==26.9.0",
     "ty==0.0.84",
     "vale==3.22.0.0",
@@ -106,8 +107,8 @@ zip-safe = false
 version_scheme = "post-release"
 
 [tool.uv]
-# Karva alpha.12 supports Python 3.10 through 3.14.
-dependency-groups.dev = { requires-python = "<3.15" }
+# Karva alpha.13 supports Python 3.10 through 3.15.
+dependency-groups.dev = { requires-python = "<3.16" }
 
 [tool.ruff]
 line-length = 79
@@ -264,7 +265,7 @@ ignore_names = [
 [tool.pyproject-fmt]
 indent = 4
 keep_full_version = true
-max_supported_python = "3.14"
+max_supported_python = "3.15"
 
 [tool.mypy]
 files = [
