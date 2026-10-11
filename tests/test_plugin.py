@@ -31,9 +31,6 @@ DOCUMENT = """\
 """
 
 
-# Mypy 2.4 infers Never for configured fixtures in Karva alpha.12.
-# https://github.com/MatthewMckee4/karva/issues/1508
-# Remove this suppression after upgrading to a release that fixes the issue.
 @karva.fixture(auto_use=True)
 def restore_doc8_ignores() -> Generator[None]:
     """Prevent registered patterns leaking between tests."""
