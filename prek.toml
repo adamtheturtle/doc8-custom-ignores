@@ -194,7 +194,7 @@ hooks = [
   {
     id = "strict-kwargs-fix",
     name = "strict-kwargs",
-    entry = "uv run --group=dev strict-kwargs check --fix",
+    entry = "uv run --group=dev strict-kwargs",
     language = "python",
     types_or = ["python"],
     additional_dependencies = ["uv==0.11.7"],
