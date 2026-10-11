@@ -122,7 +122,7 @@ name = "astroid"
 version = "4.3.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "typing-extensions", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/8d/7e/7c85d2b8549730e089bd984678a7efb64c510a5f09b4f0d9987a8354a80c/astroid-4.3.3.tar.gz", hash = "sha256:d03854b09d92c08e18d8e7d9185d393961186ed0747136d8fcb2d1c008a504ec", size = 441522, upload-time = "2026-09-30T06:03:04.601Z" }
 wheels = [
@@ -175,10 +175,10 @@ version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "os_name == 'nt'" },
-    { name = "importlib-metadata", marker = "python_full_version < '3.10.2' or python_full_version >= '3.15'" },
+    { name = "importlib-metadata", marker = "python_full_version < '3.10.2' or python_full_version >= '3.16'" },
     { name = "packaging" },
     { name = "pyproject-hooks" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/78/e0/df5e171f685f82f37b12e1f208064e24244911079d7b767447d1af7e0d70/build-1.5.0.tar.gz", hash = "sha256:302c22c3ba2a0fd5f3911918651341ebb3896176cbdec15bd421f80b1afc7647", size = 89796, upload-time = "2026-04-30T03:18:25.17Z" }
 wheels = [
@@ -288,7 +288,7 @@ source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "build" },
     { name = "setuptools" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/16/e3/8ce797dfdf12d447683490107c4dcd97bb2535d7a2b031bf3f3e4c441c3d/check_manifest-0.51.tar.gz", hash = "sha256:9801c7637675755a563f33e3c48ee59a59b37a7677297c05c910c16c5b9b6d67", size = 36302, upload-time = "2025-10-15T11:15:48.007Z" }
 wheels = [
@@ -367,7 +367,7 @@ dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
     { name = "packaging" },
     { name = "requirements-parser" },
-    { name = "tomli" },
+    { name = "tomli", marker = "python_full_version != '3.15.*'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b8/b2/50ccc99362ae7757342978b7ecb3b98e47fade721fd617d74db1948ec3a1/deptry-0.25.1.tar.gz", hash = "sha256:45c8cd982c85cd4faae573ddff6920de7eec735336db6973f26a765ae7950f7d", size = 509748, upload-time = "2026-03-18T23:22:18.139Z" }
 wheels = [
@@ -433,47 +433,47 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "actionlint-py", marker = "python_full_version < '3.15'" },
-    { name = "check-manifest", marker = "python_full_version < '3.15'" },
-    { name = "deptry", marker = "python_full_version < '3.15'" },
-    { name = "doccmd", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "furo", marker = "python_full_version < '3.15'" },
-    { name = "interrogate", marker = "python_full_version < '3.15'" },
-    { name = "karva", marker = "python_full_version < '3.15'" },
-    { name = "mypy", marker = "python_full_version < '3.15'" },
-    { name = "mypy-pytest-parametrize", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "mypy-strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
+    { name = "actionlint-py", marker = "python_full_version < '3.16'" },
+    { name = "check-manifest", marker = "python_full_version < '3.16'" },
+    { name = "deptry", marker = "python_full_version < '3.16'" },
+    { name = "doccmd", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "furo", marker = "python_full_version < '3.16'" },
+    { name = "interrogate", marker = "python_full_version < '3.16'" },
+    { name = "karva", marker = "python_full_version < '3.16'" },
+    { name = "mypy", marker = "python_full_version < '3.16'" },
+    { name = "mypy-pytest-parametrize", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "mypy-strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
     { name = "myst-parser", version = "4.0.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "myst-parser", version = "5.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "no-defaults", marker = "python_full_version < '3.15'" },
-    { name = "prek", marker = "python_full_version < '3.15'" },
-    { name = "pydocstringformatter", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "pylint", extra = ["spelling"], marker = "python_full_version < '3.15'" },
-    { name = "pylint-per-file-ignores", marker = "python_full_version < '3.15'" },
-    { name = "pyproject-fmt", marker = "python_full_version < '3.15'" },
-    { name = "pyrefly", marker = "python_full_version < '3.15'" },
-    { name = "pyright", marker = "python_full_version < '3.15'" },
-    { name = "pyroma", marker = "python_full_version < '3.15'" },
-    { name = "pyyaml", marker = "python_full_version < '3.15'" },
-    { name = "ruff", marker = "python_full_version < '3.15'" },
-    { name = "shellcheck-py", marker = "python_full_version < '3.15'" },
-    { name = "shfmt-py", marker = "python_full_version < '3.15'" },
-    { name = "snapper-fmt", marker = "python_full_version < '3.15'" },
+    { name = "myst-parser", version = "5.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "no-defaults", marker = "python_full_version < '3.16'" },
+    { name = "prek", marker = "python_full_version < '3.16'" },
+    { name = "pydocstringformatter", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "pylint", extra = ["spelling"], marker = "python_full_version < '3.16'" },
+    { name = "pylint-per-file-ignores", marker = "python_full_version < '3.16'" },
+    { name = "pyproject-fmt", marker = "python_full_version < '3.16'" },
+    { name = "pyrefly", marker = "python_full_version < '3.16'" },
+    { name = "pyright", marker = "python_full_version < '3.16'" },
+    { name = "pyroma", marker = "python_full_version < '3.16'" },
+    { name = "pyyaml", marker = "python_full_version < '3.16'" },
+    { name = "ruff", marker = "python_full_version < '3.16'" },
+    { name = "shellcheck-py", marker = "python_full_version < '3.16'" },
+    { name = "shfmt-py", marker = "python_full_version < '3.16'" },
+    { name = "snapper-fmt", marker = "python_full_version < '3.16'" },
     { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
-    { name = "sphinx-copybutton", marker = "python_full_version < '3.15'" },
-    { name = "sphinx-lint", marker = "python_full_version < '3.15'" },
-    { name = "sphinx-pyproject", marker = "python_full_version < '3.15'" },
-    { name = "sphinx-substitution-extensions", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "sphinxcontrib-spelling", marker = "python_full_version < '3.15'" },
-    { name = "strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
-    { name = "towncrier", marker = "python_full_version < '3.15'" },
-    { name = "ty", marker = "python_full_version < '3.15'" },
-    { name = "vale", marker = "python_full_version < '3.15'" },
-    { name = "vulture", marker = "python_full_version < '3.15'" },
-    { name = "yamlfix", marker = "python_full_version < '3.15'" },
-    { name = "zizmor", marker = "python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
+    { name = "sphinx-copybutton", marker = "python_full_version < '3.16'" },
+    { name = "sphinx-lint", marker = "python_full_version < '3.16'" },
+    { name = "sphinx-pyproject", marker = "python_full_version < '3.16'" },
+    { name = "sphinx-substitution-extensions", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "sphinxcontrib-spelling", marker = "python_full_version < '3.16'" },
+    { name = "strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
+    { name = "towncrier", marker = "python_full_version < '3.16'" },
+    { name = "ty", marker = "python_full_version < '3.16'" },
+    { name = "vale", marker = "python_full_version < '3.16'" },
+    { name = "vulture", marker = "python_full_version < '3.16'" },
+    { name = "yamlfix", marker = "python_full_version < '3.16'" },
+    { name = "zizmor", marker = "python_full_version < '3.16'" },
 ]
 release = [
     { name = "check-wheel-contents" },
@@ -481,7 +481,7 @@ release = [
 ]
 
 [package.group-requires-python]
-dev = "<3.15"
+dev = "<3.16"
 
 [package.metadata]
 requires-dist = [
@@ -491,45 +491,45 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "actionlint-py", marker = "python_full_version < '3.15'", specifier = "==1.7.12.25" },
-    { name = "check-manifest", marker = "python_full_version < '3.15'", specifier = "==0.51" },
-    { name = "deptry", marker = "python_full_version < '3.15'", specifier = "==0.25.1" },
-    { name = "doccmd", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==2026.9.16.1" },
-    { name = "furo", marker = "python_full_version < '3.15'", specifier = "==2025.12.19" },
-    { name = "interrogate", marker = "python_full_version < '3.15'", specifier = "==1.7.0" },
-    { name = "karva", marker = "python_full_version < '3.15'", specifier = "==0.0.1a12" },
-    { name = "mypy", marker = "python_full_version < '3.15'", specifier = "==2.4.0" },
-    { name = "mypy-pytest-parametrize", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==2026.10.5.1" },
-    { name = "mypy-strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==2026.8.25.1" },
+    { name = "actionlint-py", marker = "python_full_version < '3.16'", specifier = "==1.7.12.25" },
+    { name = "check-manifest", marker = "python_full_version < '3.16'", specifier = "==0.51" },
+    { name = "deptry", marker = "python_full_version < '3.16'", specifier = "==0.25.1" },
+    { name = "doccmd", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==2026.9.16.1" },
+    { name = "furo", marker = "python_full_version < '3.16'", specifier = "==2025.12.19" },
+    { name = "interrogate", marker = "python_full_version < '3.16'", specifier = "==1.7.0" },
+    { name = "karva", marker = "python_full_version < '3.16'", specifier = "==0.0.1a13" },
+    { name = "mypy", marker = "python_full_version < '3.16'", specifier = "==2.4.0" },
+    { name = "mypy-pytest-parametrize", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==2026.10.5.1" },
+    { name = "mypy-strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==2026.8.25.1" },
     { name = "myst-parser", marker = "python_full_version < '3.11'", specifier = "==4.0.1" },
-    { name = "myst-parser", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==5.1.0" },
-    { name = "no-defaults", marker = "python_full_version < '3.15'", specifier = "==2026.9.1" },
-    { name = "prek", marker = "python_full_version < '3.15'", specifier = "==0.5.5" },
-    { name = "pydocstringformatter", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==1.0.0" },
-    { name = "pylint", extras = ["spelling"], marker = "python_full_version < '3.15'", specifier = "==4.1.2" },
-    { name = "pylint-per-file-ignores", marker = "python_full_version < '3.15'", specifier = "==3.2.1" },
-    { name = "pyproject-fmt", marker = "python_full_version < '3.15'", specifier = "==2.30.1" },
-    { name = "pyrefly", marker = "python_full_version < '3.15'", specifier = "==1.3.2" },
-    { name = "pyright", marker = "python_full_version < '3.15'", specifier = "==1.1.414" },
-    { name = "pyroma", marker = "python_full_version < '3.15'", specifier = "==5.0.1" },
-    { name = "pyyaml", marker = "python_full_version < '3.15'", specifier = "==6.0.3" },
-    { name = "ruff", marker = "python_full_version < '3.15'", specifier = "==0.16.10" },
-    { name = "shellcheck-py", marker = "python_full_version < '3.15'", specifier = "==0.11.0.1" },
-    { name = "shfmt-py", marker = "python_full_version < '3.15'", specifier = "==4.2.0" },
-    { name = "snapper-fmt", marker = "python_full_version < '3.15'", specifier = "==0.11.9" },
-    { name = "sphinx", marker = "python_full_version < '3.15'", specifier = ">=8.1.3" },
-    { name = "sphinx-copybutton", marker = "python_full_version < '3.15'", specifier = "==0.5.2" },
-    { name = "sphinx-lint", marker = "python_full_version < '3.15'", specifier = "==1.0.2" },
-    { name = "sphinx-pyproject", marker = "python_full_version < '3.15'", specifier = "==0.3.0" },
-    { name = "sphinx-substitution-extensions", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==2026.6.17" },
-    { name = "sphinxcontrib-spelling", marker = "python_full_version < '3.15'", specifier = "==8.0.2" },
-    { name = "strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.15'", specifier = "==2026.7.24" },
-    { name = "towncrier", marker = "python_full_version < '3.15'", specifier = "==26.9.0" },
-    { name = "ty", marker = "python_full_version < '3.15'", specifier = "==0.0.84" },
-    { name = "vale", marker = "python_full_version < '3.15'", specifier = "==3.22.0.0" },
-    { name = "vulture", marker = "python_full_version < '3.15'", specifier = "==2.16" },
-    { name = "yamlfix", marker = "python_full_version < '3.15'", specifier = "==1.19.1" },
-    { name = "zizmor", marker = "python_full_version < '3.15'", specifier = "==1.30.1" },
+    { name = "myst-parser", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==5.1.0" },
+    { name = "no-defaults", marker = "python_full_version < '3.16'", specifier = "==2026.9.1" },
+    { name = "prek", marker = "python_full_version < '3.16'", specifier = "==0.5.5" },
+    { name = "pydocstringformatter", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==1.0.0" },
+    { name = "pylint", extras = ["spelling"], marker = "python_full_version < '3.16'", specifier = "==4.1.2" },
+    { name = "pylint-per-file-ignores", marker = "python_full_version < '3.16'", specifier = "==3.2.1" },
+    { name = "pyproject-fmt", marker = "python_full_version < '3.16'", specifier = "==2.30.1" },
+    { name = "pyrefly", marker = "python_full_version < '3.16'", specifier = "==1.3.2" },
+    { name = "pyright", marker = "python_full_version < '3.16'", specifier = "==1.1.414" },
+    { name = "pyroma", marker = "python_full_version < '3.16'", specifier = "==5.0.1" },
+    { name = "pyyaml", marker = "python_full_version < '3.16'", specifier = "==6.0.3" },
+    { name = "ruff", marker = "python_full_version < '3.16'", specifier = "==0.16.10" },
+    { name = "shellcheck-py", marker = "python_full_version < '3.16'", specifier = "==0.11.0.1" },
+    { name = "shfmt-py", marker = "python_full_version < '3.16'", specifier = "==4.2.0" },
+    { name = "snapper-fmt", marker = "python_full_version < '3.16'", specifier = "==0.11.9" },
+    { name = "sphinx", marker = "python_full_version < '3.16'", specifier = ">=8.1.3" },
+    { name = "sphinx-copybutton", marker = "python_full_version < '3.16'", specifier = "==0.5.2" },
+    { name = "sphinx-lint", marker = "python_full_version < '3.16'", specifier = "==1.0.2" },
+    { name = "sphinx-pyproject", marker = "python_full_version < '3.16'", specifier = "==0.3.0" },
+    { name = "sphinx-substitution-extensions", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==2026.6.17" },
+    { name = "sphinxcontrib-spelling", marker = "python_full_version < '3.16'", specifier = "==8.0.2" },
+    { name = "strict-kwargs", marker = "python_full_version >= '3.11' and python_full_version < '3.16'", specifier = "==2026.7.24" },
+    { name = "towncrier", marker = "python_full_version < '3.16'", specifier = "==26.9.0" },
+    { name = "ty", marker = "python_full_version < '3.16'", specifier = "==0.0.84" },
+    { name = "vale", marker = "python_full_version < '3.16'", specifier = "==3.22.0.0" },
+    { name = "vulture", marker = "python_full_version < '3.16'", specifier = "==2.16" },
+    { name = "yamlfix", marker = "python_full_version < '3.16'", specifier = "==1.19.1" },
+    { name = "zizmor", marker = "python_full_version < '3.16'", specifier = "==1.30.1" },
 ]
 release = [
     { name = "check-wheel-contents", specifier = "==0.6.3" },
@@ -572,7 +572,7 @@ version = "2.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "domdf-python-tools" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/48/91/cdad3f64c5bbe7650fc617f2f756b28827dd5f30b9f7b78597ce3e96fcd2/dom_toml-2.3.0.tar.gz", hash = "sha256:04d1138a7588119ec37ffe59e6474739a7ce7fcfcdf76555a064878ad82e3ae0", size = 13041, upload-time = "2026-01-22T23:12:06.225Z" }
 wheels = [
@@ -597,7 +597,7 @@ name = "dulwich"
 version = "1.2.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "typing-extensions", marker = "python_full_version < '3.12' or python_full_version >= '3.15'" },
+    { name = "typing-extensions", marker = "python_full_version < '3.12' or python_full_version >= '3.16'" },
     { name = "urllib3" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e5/73/e0ac42b16e180189e8426af41b1f29b079096088e1253d03322259945911/dulwich-1.2.12.tar.gz", hash = "sha256:1278d8ddb0a92fa4bc9f2e9b14edf0a2e140248bccc4c7c9752a1390e2ab4c64", size = 1323805, upload-time = "2026-07-19T11:16:39.472Z" }
@@ -653,9 +653,9 @@ dependencies = [
     { name = "accessible-pygments" },
     { name = "beautifulsoup4" },
     { name = "pygments" },
-    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
     { name = "sphinx-basic-ng" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/ec/20/5f5ad4da6a5a27c80f2ed2ee9aee3f9e36c66e56e21c00fde467b2f8f88f/furo-2025.12.19.tar.gz", hash = "sha256:188d1f942037d8b37cd3985b955839fea62baa1730087dc29d157677c857e2a7", size = 1661473, upload-time = "2025-12-19T17:34:40.889Z" }
@@ -712,7 +712,7 @@ dependencies = [
     { name = "colorama" },
     { name = "py" },
     { name = "tabulate" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/8b/22/74f7fcc96280eea46cf2bcbfa1354ac31de0e60a4be6f7966f12cef20893/interrogate-1.7.0.tar.gz", hash = "sha256:a320d6ec644dfd887cc58247a345054fc4d9f981100c45184470068f4b3719b0", size = 159636, upload-time = "2024-04-07T22:30:46.217Z" }
 wheels = [
@@ -742,22 +742,22 @@ wheels = [
 
 [[package]]
 name = "karva"
-version = "0.0.1a12"
+version = "0.0.1a13"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/32/10/9e8f09c28420226c2d99c303b0b598d6c8537945345ecaea56d602089349/karva-0.0.1a12.tar.gz", hash = "sha256:dceb4bff8d926f6b792f0b03354ee3e6181deca98a9c19cbb1badc816e0110a2", size = 548399, upload-time = "2026-08-18T13:48:42.007Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ad/61/4be4e66a8db1b712e6809be8f2f27b6ecd562cc1a78bd1c76ae3762ce290/karva-0.0.1a13.tar.gz", hash = "sha256:b4f7c72a8c51a3df5501c0ee419f0ff33fea6e469baa0e48af908b9af027a229", size = 721160, upload-time = "2026-10-11T18:23:48.585Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f0/d4/d201a5ca0bf700e145fee6df95042e3e4e8e40f24fe8249d6d259a92bf0a/karva-0.0.1a12-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:f5a7eca617357225f9816103c7cbf264d8e8de7105ee9c07fed491c63eaa4b7d", size = 5647959, upload-time = "2026-08-18T13:48:20.026Z" },
-    { url = "https://files.pythonhosted.org/packages/33/50/0feca2296159dd39f2af1d39315195e1d3244853e43f7ceccfc8d3f09d7c/karva-0.0.1a12-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:c8410aa0275bee4161a670aa0e72f355a0292f5d388fd02b6579fbbd14e503cb", size = 5443931, upload-time = "2026-08-18T13:48:21.996Z" },
-    { url = "https://files.pythonhosted.org/packages/f2/e7/512e0ee19a7384ec01a8ac6637ccb068dfe9f68a1ebbb554adafee07d88b/karva-0.0.1a12-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:77795f6b3429c3dc4c60bc87b2c4f0c19b5daa0ecf47052d1f5e15b62ff9be4e", size = 5610107, upload-time = "2026-08-18T13:48:23.981Z" },
-    { url = "https://files.pythonhosted.org/packages/95/72/8ccbd2db4e4100f51acab5090e81c88b87873780abbe735340c82d55699c/karva-0.0.1a12-cp310-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:d3abf511d0ca37f3ad82f3acda389bd8e795eaad73a9806df119babfa4bd1268", size = 5433085, upload-time = "2026-08-18T13:48:25.889Z" },
-    { url = "https://files.pythonhosted.org/packages/bc/33/56688e5a782f7b210244f4c508080ff8f346489aee609b7366b285d94f0c/karva-0.0.1a12-cp310-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a127d68ec7e0ae56d890ae3e13e5410d011dd72a0162f5092a1d89ec473ae8c4", size = 6458178, upload-time = "2026-08-18T13:48:27.576Z" },
-    { url = "https://files.pythonhosted.org/packages/b1/b5/e56f267619c6c433c48aa134abf7ee25c56a022e7ad3c70d07067914be77/karva-0.0.1a12-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:13726a5551f189a832359f94c8ec07909caea06f34971dc330f23629bbec1179", size = 5992081, upload-time = "2026-08-18T13:48:29.647Z" },
-    { url = "https://files.pythonhosted.org/packages/cc/6e/cc5e43c59535bd4bab5049fe376a3d97cf5904ebd0d4354ca72bbde29393/karva-0.0.1a12-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:55a6d4f361ebbc60daa8a6546aa3ce3fdb4b8d06ede4f1e883beee6c69bf1ae1", size = 5787913, upload-time = "2026-08-18T13:48:31.519Z" },
-    { url = "https://files.pythonhosted.org/packages/e8/ca/444c04259d3cc336755d65f04cb55287023050ed25b36be7f39500217c8e/karva-0.0.1a12-cp310-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:f0d226a5c02bcdae8bf30a75af40058da5a0d8cd8cf97663c630bb8c00ab8927", size = 5708187, upload-time = "2026-08-18T13:48:33.461Z" },
-    { url = "https://files.pythonhosted.org/packages/28/20/090fa4816bb989b8bdc0407aa0c19594b5d837385d49668f77d78a42eeee/karva-0.0.1a12-cp310-abi3-musllinux_1_2_i686.whl", hash = "sha256:39a6773b0cd845db13f81e63735be2e50a90ad4038258d989810d874ac187588", size = 6299057, upload-time = "2026-08-18T13:48:35.166Z" },
-    { url = "https://files.pythonhosted.org/packages/0a/f5/d8d7518e869d0b09a702ca5ff07359e0f648067f65be3e5881bd86514120/karva-0.0.1a12-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:ee3ae27fb39cf96275f20b175a0bfa235c55dfa6960feacc7e4a6a7217810260", size = 6216272, upload-time = "2026-08-18T13:48:37.004Z" },
-    { url = "https://files.pythonhosted.org/packages/f7/1a/423a1ec852d4c8f75907c826677c0d75b3f2ed0d6dabf1898a1032557465/karva-0.0.1a12-cp310-abi3-win32.whl", hash = "sha256:d2d02fcad1f87fd93e7cf85917337517159393551aa0970cbb5a332202aaca18", size = 5364860, upload-time = "2026-08-18T13:48:38.698Z" },
-    { url = "https://files.pythonhosted.org/packages/9f/2e/c266659a1e75c79824ff4674c39c767664161f46173c34173409f9d1e303/karva-0.0.1a12-cp310-abi3-win_amd64.whl", hash = "sha256:63d4a9d92d22f6c9960d60efcfe38c5514004978a2a118e1ab0a093d5f42517c", size = 5969293, upload-time = "2026-08-18T13:48:40.333Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/9f/2af98e91a500b2dab01567b192fbda43e9e5d2eda1837a25a351dab27b0c/karva-0.0.1a13-cp310-abi3-macosx_10_12_x86_64.whl", hash = "sha256:eb6b7548b5c099178e3437619af8c1857d1f5c9c7d0b7df0c1ac635919829ef9", size = 6199640, upload-time = "2026-10-11T18:23:24.801Z" },
+    { url = "https://files.pythonhosted.org/packages/af/11/2c3f0a5b2a721cdf32628f8506563143ac5375f543914b0febb56368a7b3/karva-0.0.1a13-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:a352aa6887cd4df87f42b750c46bb3543e1d268e01216639927802bab2ecaad5", size = 5966087, upload-time = "2026-10-11T18:23:26.901Z" },
+    { url = "https://files.pythonhosted.org/packages/a1/61/77b8d03f99984bd05850c4a29aef19cedd1527364d8d5f1a9fc2da0abaa1/karva-0.0.1a13-cp310-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c73810d81ce6f96e9530f8b660b6f963af7012b60823ff4bb392537c5ebfaad3", size = 6136281, upload-time = "2026-10-11T18:23:29.129Z" },
+    { url = "https://files.pythonhosted.org/packages/72/c7/51f4b94fca85c457a25d409e8a4964e6dfdf8d366b26dc4da54b04c50b76/karva-0.0.1a13-cp310-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:d1c36178fb2c2d4e2a7b308b7d10feb461752dc08643890c60a206738767ee6e", size = 5995893, upload-time = "2026-10-11T18:23:31.064Z" },
+    { url = "https://files.pythonhosted.org/packages/54/22/cce78e40c052be2cef12c3ca26c85530d60ff7427be50ea5a4f1577e9c06/karva-0.0.1a13-cp310-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:40ff3f1cb7cd92704d756cf82842fef476567078ee8d8592656ad7744d78391b", size = 7123499, upload-time = "2026-10-11T18:23:33.073Z" },
+    { url = "https://files.pythonhosted.org/packages/88/15/f7982c6e6a513885d1b30cd7fea1459c6297faf9072a6a6f4693f47ab85c/karva-0.0.1a13-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:92ad5372d494def224dc07d1fa61f4968ea61dbb4ccacc91b89671e73cf2243c", size = 6559827, upload-time = "2026-10-11T18:23:34.713Z" },
+    { url = "https://files.pythonhosted.org/packages/79/b9/2e2aaf681c4d450881ef44b3f31ab11a5b4f6525180224d05b7235ffd28f/karva-0.0.1a13-cp310-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:ca0e2ebcd688fb4923d5d67208f075f5cbb79528eaad2d61793e633e5004e8a6", size = 6312104, upload-time = "2026-10-11T18:23:36.703Z" },
+    { url = "https://files.pythonhosted.org/packages/8c/39/7d77724feb6b5940dc8e3d9c7d3d68c85827379331ee07a51abf711291fd/karva-0.0.1a13-cp310-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:234943f70bb9e4854fcb662f55ee7b10ae9c0d659e081e0ea01b0138f61c80ee", size = 6273940, upload-time = "2026-10-11T18:23:38.955Z" },
+    { url = "https://files.pythonhosted.org/packages/60/29/e2779d3a36d6ea883d3129577f75b12cc31ceff484c7a12b06da41ba8e79/karva-0.0.1a13-cp310-abi3-musllinux_1_2_i686.whl", hash = "sha256:51f265ac3a5f144ce923f396705c4f58399b668563cf953e40fb7de7e3baa3f6", size = 6913849, upload-time = "2026-10-11T18:23:40.938Z" },
+    { url = "https://files.pythonhosted.org/packages/02/0e/d39a2b413320deab965db495e83f49004457a319fbce19723d76bdb58f4a/karva-0.0.1a13-cp310-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:a8cef7676df22ecb4b04bdba15f6ac0a2880e9181c62527d9dfd8a72d5e8a1bb", size = 6780327, upload-time = "2026-10-11T18:23:43.125Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/4a/2ef872f166f4676b2c8ead8d64144ae19836b86c63fb6612b16f8013e50a/karva-0.0.1a13-cp310-abi3-win32.whl", hash = "sha256:b523931354197aee856ad1d1cebb04e661fafd9198e6259771584271c1d9520a", size = 5935471, upload-time = "2026-10-11T18:23:44.761Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/cf/425553b0e24214853d26168be074193b918ac3015d048310092083ba3c3f/karva-0.0.1a13-cp310-abi3-win_amd64.whl", hash = "sha256:ea3f0b52cf54833f482e791360c12703bd722ab87fbb4f9548e12c55fe5b8909", size = 6559483, upload-time = "2026-10-11T18:23:46.423Z" },
 ]
 
 [[package]]
@@ -910,7 +910,7 @@ source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "loguru" },
     { name = "platformdirs" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "typer" },
     { name = "typing-extensions" },
 ]
@@ -939,6 +939,7 @@ name = "markdown-it-py"
 version = "4.2.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
+    "python_full_version >= '3.15'",
     "python_full_version >= '3.12' and python_full_version < '3.15'",
     "python_full_version == '3.11.*'",
 ]
@@ -1049,8 +1050,8 @@ name = "mdit-py-plugins"
 version = "0.6.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "markdown-it-py", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
-    { name = "markdown-it-py", version = "4.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
+    { name = "markdown-it-py", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
+    { name = "markdown-it-py", version = "4.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/59/fc/f8d0863f8862f25602c0404d75568e89fb6b4109804645e5cdfb1be5cf56/mdit_py_plugins-0.6.1.tar.gz", hash = "sha256:a2bca0f039f39dbd35fb74ae1b5f998608c437463371f0ff7f49a19a17a114d0", size = 56114, upload-time = "2026-05-13T09:03:38.91Z" }
 wheels = [
@@ -1075,7 +1076,7 @@ dependencies = [
     { name = "librt", marker = "platform_python_implementation != 'PyPy'" },
     { name = "mypy-extensions" },
     { name = "pathspec" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/34/4e/64300736cf0a0373a27b94a91b664ee7382e36f77b0621bae6381da3e180/mypy-2.4.0.tar.gz", hash = "sha256:77bdaebd452f43fcfc4cc3ba94352a3ea537cd01e3f2d0879f48673d2ec00d6e", size = 4064425, upload-time = "2026-10-01T20:40:39.229Z" }
@@ -1193,6 +1194,7 @@ name = "myst-parser"
 version = "5.1.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
+    "python_full_version >= '3.15'",
     "python_full_version >= '3.12' and python_full_version < '3.15'",
     "python_full_version == '3.11.*'",
 ]
@@ -1202,8 +1204,8 @@ dependencies = [
     { name = "markdown-it-py", version = "4.2.0", source = { registry = "https://pypi.org/simple" } },
     { name = "mdit-py-plugins" },
     { name = "pyyaml" },
-    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or python_full_version >= '3.15'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or python_full_version >= '3.16'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/21/dc/603751677fff302f34396e206b610f556a59d7fe58b9a2145f54e96b48e8/myst_parser-5.1.0.tar.gz", hash = "sha256:ab69322dc6719dcc7f296479dbb70181b66df6ed315064f92dbc85c0e1bf2f02", size = 101182, upload-time = "2026-05-13T09:38:19.361Z" }
 wheels = [
@@ -1484,7 +1486,7 @@ dependencies = [
     { name = "isort" },
     { name = "mccabe" },
     { name = "platformdirs" },
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "tomlkit" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/19/3c/be4bb2d62e3d1bee3f3aa14af5b294813ad53351cacb3b03fbaf3f851e03/pylint-4.1.2.tar.gz", hash = "sha256:235f13dc418c0041c649b42a5c35c99f2ffc6ca8b6a7574958eac5335906a68a", size = 1739885, upload-time = "2026-10-02T22:49:42.64Z" }
@@ -1849,8 +1851,8 @@ name = "rich"
 version = "15.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "markdown-it-py", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
-    { name = "markdown-it-py", version = "4.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.15'" },
+    { name = "markdown-it-py", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
+    { name = "markdown-it-py", version = "4.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' and python_full_version < '3.16'" },
     { name = "pygments" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz", hash = "sha256:edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36", size = 230680, upload-time = "2026-04-12T08:24:00.75Z" }
@@ -2046,6 +2048,7 @@ name = "sphinx"
 version = "9.1.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
+    "python_full_version >= '3.15'",
     "python_full_version >= '3.12' and python_full_version < '3.15'",
 ]
 dependencies = [
@@ -2077,9 +2080,9 @@ name = "sphinx-basic-ng"
 version = "1.0.0b2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/98/0b/a866924ded68efec7a1759587a4e478aec7559d8165fac8b2ad1c0e774d6/sphinx_basic_ng-1.0.0b2.tar.gz", hash = "sha256:9ec55a47c90c8c002b5960c57492ec3021f5193cb26cebc2dc4ea226848651c9", size = 20736, upload-time = "2023-07-08T18:40:54.166Z" }
 wheels = [
@@ -2091,9 +2094,9 @@ name = "sphinx-copybutton"
 version = "0.5.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/fc/2b/a964715e7f5295f77509e59309959f4125122d648f86b4fe7d70ca1d882c/sphinx-copybutton-0.5.2.tar.gz", hash = "sha256:4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd", size = 23039, upload-time = "2023-04-14T08:10:22.998Z" }
 wheels = [
@@ -2134,8 +2137,8 @@ dependencies = [
     { name = "beartype" },
     { name = "docutils" },
     { name = "myst-parser", version = "5.1.0", source = { registry = "https://pypi.org/simple" } },
-    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or python_full_version >= '3.15'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or python_full_version >= '3.16'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/dd/fb/6bf1b3e5bbd97d6f4632e2bb8f48518f8400cf0e4d2949f15be5a933b068/sphinx_substitution_extensions-2026.6.17.tar.gz", hash = "sha256:b7901937a43853bdaa97408ab8d73c9dc3497ec9bcf3a0c4b5fb2cce8baece13", size = 37045, upload-time = "2026-06-17T09:57:31.943Z" }
 wheels = [
@@ -2203,9 +2206,9 @@ source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyenchant" },
     { name = "requests" },
-    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "sphinx", version = "8.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
     { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.15'" },
+    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' and python_full_version < '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/4b/cd/fa8039cedce6295644ff5f03367742d21e7922da426e8c666b7f5a213682/sphinxcontrib_spelling-8.0.2.tar.gz", hash = "sha256:afbc7b8e93721ab88f12bdd39d848b92017b3763b9ed6226b4b0e54b06664fea", size = 30955, upload-time = "2025-11-28T15:31:50.235Z" }
 wheels = [
@@ -2454,7 +2457,7 @@ name = "vulture"
 version = "2.16"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.15'" },
+    { name = "tomli", marker = "python_full_version < '3.11' or python_full_version >= '3.16'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/66/3e/4d08c5903b2c0c70cad583c170cc4a663fc6a61e2ad00b711fcda61358cd/vulture-2.16.tar.gz", hash = "sha256:f8d9f6e2af03011664a3c6c240c9765b3f392917d3135fddca6d6a68d359f717", size = 52680, upload-time = "2026-03-25T14:41:27.141Z" }
 wheels = [
