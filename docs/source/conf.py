@@ -15,7 +15,7 @@ _pyproject_config = SphinxConfig(
 
 project = _pyproject_config.name
 author = _pyproject_config.author
-release = importlib.metadata.version(distribution_name=project)
+release: str = importlib.metadata.version(distribution_name=project)
 
 extensions = [
     "myst_parser",
