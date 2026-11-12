@@ -289,7 +289,6 @@ search-path = [
     "typings",
 ]
 errors.non-exhaustive-match = "error"
-coverage.includes = [ "src/**" ]
 enabled-ignores = [ "pyrefly" ]
 preset = "all"
 
